@@ -1,0 +1,26 @@
+<div class="title">todos</div>
+<div class="container">
+
+<ul>
+  <li class="input">
+    <input autofocus type="text" [(ngModel)]="todo" (keyup.enter)="addTodo(todo)" placeholder="What needs to be done">
+  </li>
+  <li class="todo-item" *ngFor="let item of todos">
+    <input (click)="updateTodo(item)" type="checkbox" [(ngModel)]="item.completed">
+    <label [ngClass]="{'completed': item.completed}" for="">{{item.title}}</label>
+    <button (click)="removeTodo(item)">Remove</button>
+  </li>
+</ul>
+<div class="footer">
+  <div class="left">
+     {{todos.length - selected.length}} items left
+  </div>
+  <div class="right" (click)="removeCompleted()">
+    Clear completed
+  </div>
+ 
+</div>
+</div>
+<div style="position: absolute; top: 10px; right: 10px;" (click)="clearAll()">
+  Clear
+</div>

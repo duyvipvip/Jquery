@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: lighter;
+  font-family: Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  .title {
+    text-align: center;
+    font-weight: lighter !important;
+    font-size: 72px;
+    color: rgba(175, 47, 47, 0.15);
+  }
+  .container {
+    width: 450px;
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    margin:  0;
+    li {
+      width: 100%;
+      background: white;
+    }
+    .input {
+      display: flex;
+      border: none;
+      background: rgba(0, 0, 0, 0.003);
+      input {
+        // font-style: italic;
+        border: none;
+        box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+        font-size: 2em;
+        font-weight: lighter;
+        padding: 8px 16px;
+        flex: 1;
+        color: rgba($color: #000000, $alpha: 0.15);
+      }
+      input:focus {
+        color: black;
+        font-style: normal;
+      }
+    }
+    .todo-item {
+      flex: 1;
+      padding: 16px 0;
+      display: flex;
+      border-bottom: solid rgba($color: #000000, $alpha: 0.15) 1px;
+      input {
+        margin-right: 16px;
+        margin-left: 16px;
+        align-self: center;
+      }
+      label {
+          flex: 1;
+          margin: 4px 0;
+          &.completed {
+            color: rgba($color: #000000, $alpha: 0.15);
+            text-decoration: line-through;
+          }
+      }
+      button {
+          padding: 4px 8px;
+          margin-right: 16px;
+          margin-left: 16px;
+          align-self: center;
+          display: none;
+      }
+      &:hover {
+        button {
+            display: block;
+        }
+      }
+    }
+  }
+  .footer {
+    background: white;
+    position:  relative;
+    padding: 8px 0;
+    display: flex;
+    div {
+      flex: 1;
+      padding-left: 16px;
+    }
+    .right {
+      text-align: right;
+      padding-right: 16px;
+      z-index: 1000;
+    }
+  }
+  .footer:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  }
+}
